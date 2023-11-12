@@ -15,7 +15,7 @@ This Django TODO app allows users to manage their tasks. Users can view a list o
 2. Navigate to the project directory:
 
     ```bash
-    cd django_todo_app
+    cd backend
     ```
 
 3. Install dependencies:
@@ -44,14 +44,25 @@ This Django TODO app allows users to manage their tasks. Users can view a list o
 
 7. Access the API at [http://localhost:8000](http://localhost:8000).
 
+### Admin Login
+
 ## API Endpoints
 
-### Task List
+### Admin Login
+- **URL:** `http://localhost:8000/admin/`
+-  **Description:** use superuser username and password.
+### Authentication
 
-- **URL:** `/tasks/`
-- **Method:** `GET`
-- **Description:** Get a list of all tasks for the authenticated user.
+- **URL:** `http://localhost:8000/login/`
+- **Method:** `POST`
+- **Description:** pass username and password .and return the token.
+
+- **URL:** `http://localhost:8000/register/`
+- **Method:** `POST`
+- **Description:** to register new user.
+
+- **URL:** `http://localhost:8000/logout/`
+- **Method:** `POST`
+- **Description:** to logout user which delete the token assosiated with user.
 - **Example Request:**
 
-  ```bash
-  http GET http://localhost:8000/tasks/ "Authorization: Token <your_token>"
